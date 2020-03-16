@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AACA,OAAO,CAAC,qDAAI",
+    "sources": [
+        "../sass/app.scss",
+        "../sass/_variables.scss",
+        "../sass/_custom.scss"
+    ],
+    "names": [],
+    "file": "app.css"
+}
