@@ -33,11 +33,7 @@
 
 <body>
     <div class="container" id="app">
-        @include('inc.navbar')
-        
-            @include('inc.messages')
-        
-        
+            @include('inc.login-nav')
             @yield('content')
         <footer class="text-center">copyright 2020</footer>
     </div>

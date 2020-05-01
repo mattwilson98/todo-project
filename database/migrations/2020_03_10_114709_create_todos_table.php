@@ -17,7 +17,8 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->string('title');
             $table->mediumText('content');
-            $table->string('due');
+            $table->dateTime('due_at');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

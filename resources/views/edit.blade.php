@@ -15,11 +15,11 @@
         </div>
         <div class="form-group">
             <label for="content">Content</label>
-            <input type="text" class="form-control" name="content" id="content" placeholder="Enter content" value="{{ $todo->content }}">
+            <textarea type="text" class="form-control" name="content" id="summernote" placeholder="Enter content">{{ $todo->content }}</textarea>
         </div>
         <div class="form-group">
-            <label for="due">Due</label>
-            <input type="text" class="form-control" name="due" id="due" placeholder="Enter due" value="{{ $todo->due }}">
+            <label for="due_at">Due</label>
+            <input type="date" class="form-control" name="due_at" id="due_at" placeholder="Enter due" value="{{ $todo->due_at->format('Y-m-d') }}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -1,12 +1,15 @@
 body{
-    background-color: #848FA5;
+    background-color: white !important;
 }
 
 h1{
-    text-decoration: underline;
-    text-align: center;
+    text-decoration: bold;
     color: #272932;
     padding-top: 10px;
+}
+
+.custom-select{
+    width: 20%;
 }
 
 h2{
@@ -19,7 +22,8 @@ h2{
 }
 
 .navbar{
-    background-color: #4D7EA8;
+    display: block;
+    background-color: black;
     a:hover{
         text-decoration: underline;
         color: white;
@@ -27,6 +31,16 @@ h2{
     a:link{
         color: white;
     }
+}
+
+.navbar-nav{
+    width: 100%;
+    display: block;
+}
+
+.navbar-toggler{
+    width: 100%;
+    text-align: right;
 }
 
 .alert-success{
@@ -45,27 +59,54 @@ span .badge{
 }
 
 footer{
-    margin-top: 20px;
+    
     padding: 10px;
-    background-color: #4D7EA8;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    
 }
 
 .card{
-    background-color:  #779CAB !important;
+    background-color:  white !important;
     margin: 10px;
+}
+
+.card-header{
+    background-color: black;
+    color: white;
 }
 
 form{
     padding: 20px;
 }
 
-.container{
-    border: #4D7EA8 solid 5px;
-    margin-top: 50px;
+.container-content{
+    margin: 50px 100px 100px 100px;
     margin-bottom: 100px;
-    background-Color: #B4C9D1;
+    border-radius: 5px;
+    
 }
+
+.checkbox{
+    bottom: 10px;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 0 !important;
+}
+
+
+
+.form-check-input {
+    position: relative;
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar-nav {
+      width: 100%
+    }
+    .nav-item{
+        padding-right: 5px;
+    }
+  }

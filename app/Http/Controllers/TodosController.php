@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Carbon\Carbon;
 
 class TodosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todo::orderBy('created_at', 'asc')->get(); 
+        $todos = Todo::where('user_id', auth()->user()->id)->orderBy('created_at', 'asc')->get(); 
         
         return view('index')->with('todos', $todos);    /* This method orders the data to show the most recently created at the bottom of the list   */
     }
@@ -45,15 +50,15 @@ class TodosController extends Controller
             [
                 'title' => 'required',
                 'content' => 'required',
-                'due' => 'required'
+                'due_at' => 'required'
 
             ]
         );
-        
         $todo = new Todo();
         $todo->title = $request->input('title');
         $todo->content = $request->input('content');
-        $todo->due = $request->input('due');
+        $todo->due_at = Carbon::createFromFormat('Y-m-d', $request->input('due_at'))->startOfDay();
+        $todo->user_id = auth()->user()->id;
         $todo->save();
 
         return redirect('/')->with('success', 'Todo created successfully!');

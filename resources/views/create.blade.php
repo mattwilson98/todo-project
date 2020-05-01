@@ -11,11 +11,11 @@
             </div>
             <div class="form-group">
                 <label for="content">Content</label>
-                <input type="text" class="form-control" name="content" id="content" placeholder="Enter content" value="{{ old('content') }}"><!-- This is the content field -->
+                <textarea type="text" class="form-control" name="content" id="summernote" placeholder="Enter content" value="{{ old('content') }}"></textarea><!-- This is the content field -->
             </div>
             <div class="form-group">
-                <label for="due">Due</label>
-                <input type="text" class="form-control" name="due" id="due" placeholder="Enter due" value="{{ old('due') }}"><!-- This is the due field -->
+                <label for="due_at">Due</label>
+                <input type="date" class="form-control" name="due_at" id="due_at" placeholder="Enter due" value="{{ old('due_at') }}"><!-- This is the due field -->
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>

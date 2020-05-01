@@ -7,7 +7,7 @@
     <h1>{{ $todo->title }}</h1><!-- This shows the todo's title -->
     <div class="badge badge-danger p-2">{{ $todo->due }}</div><!-- this shows when the todo is due. -->
     <hr>
-    <p>{{ $todo->content }}</p><!-- This shows the todo's content -->
+    <span>{!! $todo->content !!}</span><!-- This shows the todo's content -->
     <form method="post" action="/todo/{{ $todo->id }}">
         @csrf
         @method('DELETE')
