@@ -10,7 +10,7 @@
     </div>
     <div class="card-body">
         <!-- <h3 class="card-title">{{ $todo->title }}</h3> -->
-        <p class="card-text">{!! $todo->content !!}</p><br>
+        <p class="card-text">{!! Str::limit($todo->content, 10); !!}</p><br>
         <span class="badge badge-danger">{{ $todo->due }}</span>
         <a href="todo/{{ $todo->id }}" class="btn btn-primary">Read more</a>
     </div>

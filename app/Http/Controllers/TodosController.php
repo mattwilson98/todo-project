@@ -19,7 +19,7 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todo::where('user_id', auth()->user()->id)->orderBy('created_at', 'asc')->get(); 
+        $todos = Todo::where('user_id', auth()->user()->id)->orderBy('due_at', 'desc')->get(); 
         
         return view('index')->with('todos', $todos);    /* This method orders the data to show the most recently created at the bottom of the list   */
     }
@@ -109,7 +109,7 @@ class TodosController extends Controller
         $todo = Todo::find($id);
         $todo->title = $request->input('title');
         $todo->content = $request->input('content');
-        $todo->due = $request->input('due');
+        $todo->due_at = $request->input('due_at');
         $todo->save();
 
         return redirect('/')->with('success', 'Todo updated successfully!');
